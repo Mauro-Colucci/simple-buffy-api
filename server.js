@@ -94,6 +94,10 @@ app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html')
 })
 
+app.get('/api/', (request, response) => {
+    response.json(dataApi)
+})
+
 app.get('/api/:dataRequest', (request, response) => {
     const dataRequested = request.params.dataRequest.toLowerCase();
     if (dataApi[dataRequested]) {
